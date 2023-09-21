@@ -47,17 +47,28 @@ function Slide({ data }) {
   
   return (
     <Link href={`/posts/${id}`}>
-      <div className={`${styles.backgroundImg} relative bg-top bg-no-repeat bg-cover`} style={{width: '100%', backgroundImage: `url(${img || "/"})`}}>
-      <div className="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900 dark:to-gray-800"></div>
-        <div className="absolute bottom-0 w-full text-white p-8 max-w-2xl">
-          <div className="category pb-1">
-            <span className="text-emerald-500 dark:text-emerald-400 hover:opacity-50 pr-1 transition-opacity">{category || "Unknown"}</span>
-            <span className="text-white hover:opacity-50 transition-opacity">- {published || "Unknown"}</span>
-          </div>
-          <h3 className="text-2xl md:text-4xl font-bold text-white hover:opacity-50 transition-opacity">{title || "No title"}</h3>
-          <p className="text-gray-200 dark:text-gray-300 pt-4 line-clamp-2 hover:opacity-50 transition-opacity">{description || "description"}</p>
+      <div className={`${styles.backgroundImg} relative bg-top bg-no-repeat bg-cover`} style={{ width: '100%' }}>
+      {img && (
+        <Image
+          src={img}
+          alt="Background Image"
+          fill
+          objectFit="cover"
+          quality={100}
+          className="absolute z-0"
+        />
+      )}
+      <div className="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900 dark:to-gray-800 z-10"></div>
+      
+      <div className="absolute bottom-0 w-full text-white p-8 max-w-2xl z-20">
+        <div className="category pb-1">
+          <span className="text-emerald-300 hover:opacity-75 pr-1 transition-opacity">{category || "Unknown"}</span>
+          <span className="text-white hover:opacity-50 transition-opacity">- {published || "Unknown"}</span>
         </div>
+        <p className="text-2xl md:text-4xl font-bold text-white hover:opacity-50 transition-opacity">{title || "No title"}</p>
+        <p className="text-gray-200 dark:text-gray-300 pt-4 line-clamp-2 hover:opacity-50 transition-opacity">{description || "description"}</p>
       </div>
+    </div>
     </Link>
   )
 }

@@ -32,15 +32,15 @@ function Post( { data } ) {
     return (
         <Link href={`/posts/${id}`} className="item bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors duration-300">
             <div className="images">
-                <Image src={img || "/"} loading="lazy" className="w-full" width={400} height={250} alt="Image of article" />
+                <Image src={img || "/"} loading="lazy" quality={90} className="w-full" width={400} height={250} alt="Image of article" />
             </div>
             <div className="info p-6 flex flex-col pt-4">
                 <div className="category pb-3">
-                    <span className="text-emerald-600 hover:opacity-50 text-emerald-500 dark:text-emerald-400 dark:hover:opacity-50 pr-1 transition-opacity text-sm">{category || "Unknown"}</span>
+                    <span className="text-emerald-800 hover:opacity-75 transition-opacity dark:text-emerald-300 pr-1 text-sm">{category || "Unknown"}</span>
                     <span className="text-gray-800 hover:opacity-50 text-gray-800 dark:text-white transition-opacity text-sm">- {published || "Unknown"}</span>
                 </div>
                 <div className="title flex flex-col h-full">
-                    <h3 className="text-lg font-bold text-gray-800 hover:opacity-50 dark:text-white transition-opacity">{title || Title}</h3>
+                    <p className="text-lg font-bold text-gray-800 hover:opacity-50 dark:text-white transition-opacity">{title || Title}</p>
                     <p className="text-gray-500 dark:text-gray-400 hover:opacity-50 pt-3 line-clamp-4 mb-6 transition-opacity text-sm">{subtitle || "Subtitle"}</p>
                     { author ? <Author {...author}></Author> : <></>}
                 </div>

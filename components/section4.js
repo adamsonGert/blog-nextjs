@@ -45,7 +45,7 @@ function Post({ data }) {
             </div>
             <div className="info flex justify-center flex-col">
                 <div className="category pb-2 md:pb-5">
-                    <Link href={`/posts/${id}`} className="text-emerald-600 hover:opacity-50 text-emerald-500 transition-opacity dark:text-emerald-400 pr-1 text-sm">{category || "Unknown"}</Link>
+                    <Link href={`/posts/${id}`} className="text-emerald-800 hover:opacity-75 transition-opacity dark:text-emerald-300 pr-1 text-sm">{category || "Unknown"}</Link>
                     <Link href={`/posts/${id}`} className="text-gray-800 hover:opacity-50 text-black-500 transition-opacity dark:text-white text-sm">- {published || "Unknown"}</Link>
                 </div>
                 <div className="title max-w-sm">
