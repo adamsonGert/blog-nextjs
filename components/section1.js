@@ -53,6 +53,7 @@ function Slide({ data }) {
           src={img}
           alt="Background Image"
           fill
+          priority
           objectFit="cover"
           quality={100}
           className="absolute z-0"
